@@ -1,0 +1,10 @@
+# Point these hostnames' A records at the VPS public IPv4, then reload Caddy.
+
+wake.a10x.eu {
+	reverse_proxy 127.0.0.1:8789
+}
+
+# Message relay — E2E ciphertext only. TLS on :443 (clients use https://relay.a10x.eu).
+relay.a10x.eu {
+	reverse_proxy 127.0.0.1:8787
+}

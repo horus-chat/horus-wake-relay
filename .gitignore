@@ -1,0 +1,8 @@
+target/
+Cargo.lock
+.DS_Store
+*.p8
+*.pem
+fcm.json
+wake_tokens.sqlite
+.env

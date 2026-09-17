@@ -1,0 +1,29 @@
+[package]
+name = "horus-wake-relay"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Content-free APNs/FCM wake ping. Never stores message content."
+repository = "https://github.com/horus-chat/horus-wake-relay"
+readme = "README.md"
+
+[lib]
+name = "horus_wake_relay"
+path = "src/lib.rs"
+
+[[bin]]
+name = "horus-wake-relay"
+path = "src/main.rs"
+
+[dependencies]
+base64 = "0.22"
+jsonwebtoken = "9"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "http2", "blocking"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+hmac = "0.12"
+
+[dev-dependencies]
+tempfile = "3"

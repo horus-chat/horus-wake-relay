@@ -1,0 +1,23 @@
+[Unit]
+Description=Horus content-free wake relay
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=horus
+Group=horus
+EnvironmentFile=/etc/horus/wake.env
+ExecStart=/usr/local/bin/horus-wake-relay
+WorkingDirectory=/var/lib/horus
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/horus
+MemoryMax=256M
+
+[Install]
+WantedBy=multi-user.target
